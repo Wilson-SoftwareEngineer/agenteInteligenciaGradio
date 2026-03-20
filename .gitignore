@@ -1,0 +1,7 @@
+.env
+venv/
+qdrant_storage/
+modelo_embeddings/
+__pycache__/
+*.pyc
+*.tar.gz

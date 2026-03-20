@@ -1,0 +1,27 @@
+# Interface
+gradio>=4.0
+
+# Banco vetorial
+qdrant-client>=1.7.0
+
+# LLM e orquestração
+langchain>=0.2.0
+langchain-openai>=0.1.0
+langchain-community>=0.2.0
+openai>=1.0.0
+
+# Embeddings locais
+sentence-transformers>=2.2.0
+
+# Processamento de PDFs e DOCX
+pypdf>=3.0.0
+python-docx>=1.1.0
+pytesseract>=0.3.10
+Pillow>=10.0.0
+
+# Text splitting
+langchain-text-splitters>=0.2.0
+
+# Utilitários
+python-dotenv>=1.0.0
+pandas>=2.0.0
