@@ -1,6 +1,6 @@
-# Agente de Inteligência Investigativa — FICCO
+# Agente de Inteligência Investigativa
 
-Sistema RAG (Retrieval-Augmented Generation) com interface web para consulta de relatórios investigativos da FICCO-PI. Combina busca vetorial semântica no banco Qdrant com geração de respostas estruturadas pelo modelo GPT-4.1 da OpenAI.
+Sistema RAG (Retrieval-Augmented Generation) com interface web para consulta de relatórios investigativos. Combina busca vetorial semântica no banco Qdrant com geração de respostas estruturadas pelo modelo GPT-4.1 da OpenAI.
 
 ---
 
@@ -88,7 +88,7 @@ OPENAI_API_KEY=sua-chave-aqui
 OPENAI_MODEL=gpt-4.1
 QDRANT_HOST=localhost
 QDRANT_PORT=6334
-COLLECTION_NAME=relatorios_ficco
+COLLECTION_NAME=relatorios
 GRADIO_USER=seu-usuario
 GRADIO_PASS=sua-senha
 EMBEDDINGS_PATH=/caminho/para/modelo_embeddings
@@ -100,7 +100,7 @@ EMBEDDINGS_PATH=/caminho/para/modelo_embeddings
 | `OPENAI_MODEL` | Modelo LLM | `gpt-4o` |
 | `QDRANT_HOST` | Host do Qdrant | `localhost` |
 | `QDRANT_PORT` | Porta do Qdrant | `6334` |
-| `COLLECTION_NAME` | Nome da coleção | `relatorios_ficco` |
+| `COLLECTION_NAME` | Nome da coleção | `relatorios` |
 | `GRADIO_USER` | Usuário de acesso à interface | `admin` |
 | `GRADIO_PASS` | Senha de acesso à interface | `admin` |
 | `EMBEDDINGS_PATH` | Caminho do modelo local | `./modelo_embeddings` |
@@ -152,7 +152,7 @@ A resposta é gerada em streaming no formato:
 
 ⚠️ NOTAS OPERACIONAIS: análise consolidada
 ─────────────────────────
-Fonte: Base Integrada FICCO-PI
+Fonte: Base Integrada de Relatórios
 ```
 
 ### Consulta Avançada
@@ -251,8 +251,8 @@ Requer **VPS KVM 2+** (8 GB RAM, 4 vCPU).
 apt install nginx certbot python3-certbot-nginx
 
 # Criar serviço systemd
-# /etc/systemd/system/ficco.service
-systemctl enable ficco && systemctl start ficco
+# /etc/systemd/system/agente.service
+systemctl enable agente && systemctl start agente
 
 # Configurar reverse proxy Nginx (porta 7860 → 443)
 # Emitir certificado SSL
@@ -268,4 +268,4 @@ Internet → Nginx (443 HTTPS + SSL) → Gradio (:7860) → Qdrant (Docker)
 
 ## Licença
 
-Uso interno — FICCO-PI. Todos os direitos reservados.
+Uso interno. Todos os direitos reservados.
